@@ -6,15 +6,16 @@ shadcn (`base-nova` style on Base UI). The catalogue is served by an external Fa
 backend; there is no cart or checkout — CTAs are `tel:`, `mailto:`, and Instagram links.
 
 ## Commands
-- `bun install` — use bun. `bun.lock` matches `node_modules`; the committed
-  `pnpm-lock.yaml` is stale.
-- `bun run dev` / `bun run build` / `bun run start`
-- `bunx tsc --noEmit` — the only real typecheck. `next.config.mjs` sets
+- `pnpm install` — use pnpm. `pnpm-lock.yaml` is the active lockfile.
+- `pnpm dev` / `pnpm build` / `pnpm start`
+- `pnpm exec tsc --noEmit` — the only real typecheck. `next.config.mjs` sets
   `typescript.ignoreBuildErrors: true`, so a successful build does NOT mean types pass.
 - There is no lint, formatter, test suite, or CI configured. Do not invent commands.
 
 ## Structure
 - `app/page.tsx` — home; renders `<AlQasrStorefront />`.
+- `app/events/page.tsx` — static events/stall booking page with `tel:`, `mailto:`,
+  and Instagram CTAs; local event imagery lives in `public/images/events/`.
 - `app/collection/` — `/collection` listing and `/collection/[slug]` detail, both
   server components (`force-dynamic`). `layout.tsx` adds shared header/footer.
 - `components/al-qasr-storefront.tsx` — home page content; `'use client'`; fetches the

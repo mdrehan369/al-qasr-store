@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
   { label: "Collection", href: "/collection" },
+  { label: "Events", href: "/events" },
   { label: "The house", href: "/#house" },
   { label: "Visit / enquire", href: "/#contact" },
 ];
@@ -16,6 +17,12 @@ const navLinks = [
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+
+  const isActive = (href: string) => {
+    if (href === "/collection") return pathname.startsWith("/collection");
+    if (href === "/events") return pathname.startsWith("/events");
+    return false;
+  };
 
   return (
     <>
@@ -32,18 +39,17 @@ export function SiteHeader() {
             Al Qasr<span className="text-brass">.</span>
           </Link>
           <nav
-            className="hidden items-center gap-8 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground md:flex"
+            className="hidden items-center gap-7 font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground md:flex lg:gap-8"
             aria-label="Primary navigation"
           >
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
+                aria-current={isActive(link.href) ? "page" : undefined}
                 className={cn(
                   "transition-colors hover:text-foreground",
-                  link.href === "/collection" &&
-                    pathname.startsWith("/collection") &&
-                    "text-foreground",
+                  isActive(link.href) && "text-foreground",
                 )}
               >
                 {link.label}

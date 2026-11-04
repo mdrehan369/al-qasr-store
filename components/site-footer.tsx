@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Camera, Mail, Phone } from "lucide-react";
 
 const contactLinks = [
@@ -39,7 +40,15 @@ export function SiteFooter() {
       </div>
       <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-2 border-t border-ivory/10 pt-5 font-mono text-[9px] uppercase tracking-[0.16em] text-ivory/35 sm:flex-row sm:justify-between">
         <span>Al Qasr · Kolkata, West Bengal, India</span>
-        <span>Perfume & attar · Worldwide enquiries</span>
+        <span className="flex flex-wrap gap-x-6 gap-y-2">
+          <Link
+            href="/events"
+            className="transition-colors hover:text-brass"
+          >
+            Events & stall bookings
+          </Link>
+          <span>Perfume & attar · Worldwide enquiries</span>
+        </span>
       </div>
     </footer>
   );
