@@ -2,20 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Camera, Mail, Phone } from "lucide-react";
+import { ArrowUpRight, Camera } from "lucide-react";
 
 import { useProducts } from "@/hooks/use-products";
 import { imageKitUrl } from "@/lib/format";
-
-const contactLinks = [
-  { label: "Call us", href: "tel:+919876543210", icon: Phone },
-  {
-    label: "Instagram",
-    href: "https://instagram.com/alqasrfragrances",
-    icon: Camera,
-  },
-  { label: "Email", href: "mailto:hello@alqasrfragrances.com", icon: Mail },
-];
+import { contactLinks, INSTAGRAM_URL } from "@/lib/constants";
 
 export function AlQasrStorefront() {
   const productsQuery = useProducts({
@@ -277,7 +268,7 @@ export function AlQasrStorefront() {
             for the moments you want to keep close.
           </p>
           <a
-            href="https://instagram.com/alqasrfragrances"
+            href={INSTAGRAM_URL}
             target="_blank"
             rel="noreferrer"
             className="mt-9 inline-flex items-center gap-3 border-b border-ink pb-2 font-mono text-[10px] uppercase tracking-[0.18em] text-ink"

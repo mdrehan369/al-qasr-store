@@ -1,15 +1,5 @@
+import { contactLinks } from "@/lib/constants";
 import Link from "next/link";
-import { Camera, Mail, Phone } from "lucide-react";
-
-const contactLinks = [
-  { label: "Call us", href: "tel:+919876543210", icon: Phone },
-  { label: "Email", href: "mailto:hello@alqasrfragrances.com", icon: Mail },
-  {
-    label: "Instagram",
-    href: "https://instagram.com/alqasrfragrances",
-    icon: Camera,
-  },
-];
 
 export function SiteFooter() {
   return (
@@ -41,10 +31,7 @@ export function SiteFooter() {
       <div className="mx-auto mt-10 flex max-w-7xl flex-col gap-2 border-t border-ivory/10 pt-5 font-mono text-[9px] uppercase tracking-[0.16em] text-ivory/35 sm:flex-row sm:justify-between">
         <span>Al Qasr · Kolkata, West Bengal, India</span>
         <span className="flex flex-wrap gap-x-6 gap-y-2">
-          <Link
-            href="/events"
-            className="transition-colors hover:text-brass"
-          >
+          <Link href="/events" className="transition-colors hover:text-brass">
             Events & stall bookings
           </Link>
           <span>Perfume & attar · Worldwide enquiries</span>

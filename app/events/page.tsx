@@ -1,19 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import {
-  ArrowUpRight,
-  Camera,
-  Check,
-  Mail,
-  MapPin,
-  Phone,
-} from "lucide-react";
+import { ArrowUpRight, Camera, Check, Mail, MapPin, Phone } from "lucide-react";
+import { EMAIL_ID, INSTAGRAM_URL, WHATSAPP_NO } from "@/lib/constants";
 
-const phoneHref = "tel:+919876543210";
-const phoneLabel = "+91 98765 43210";
-const emailHref =
-  "mailto:hello@alqasrfragrances.com?subject=Event%20stall%20enquiry";
-const instagramHref = "https://instagram.com/alqasrfragrances";
+const phoneHref = WHATSAPP_NO;
+const phoneLabel = "+91 91236 80629";
+const emailHref = EMAIL_ID;
+const instagramHref = INSTAGRAM_URL;
 
 const occasions = [
   {
@@ -33,8 +26,7 @@ const occasions = [
   },
   {
     title: "Markets & exhibitions",
-    detail:
-      "A compact stall for curated fairs, cultural events, and pop-ups.",
+    detail: "A compact stall for curated fairs, cultural events, and pop-ups.",
   },
 ];
 
@@ -499,7 +491,7 @@ export default function EventsPage() {
                       Instagram
                     </span>
                     <span className="mt-1 block font-serif text-2xl">
-                      @alqasrfragrances
+                      @al_qasr_fragrance
                     </span>
                   </span>
                 </span>

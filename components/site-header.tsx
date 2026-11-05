@@ -6,6 +6,7 @@ import { Menu, Phone, X } from "lucide-react";
 import { useState } from "react";
 
 import { cn } from "@/lib/utils";
+import { WHATSAPP_NO } from "@/lib/constants";
 
 const navLinks = [
   { label: "Collection", href: "/collection" },
@@ -57,8 +58,9 @@ export function SiteHeader() {
             ))}
           </nav>
           <a
-            href="tel:+919876543210"
+            href={WHATSAPP_NO}
             className="hidden items-center gap-2 font-mono text-[10px] uppercase tracking-[0.16em] text-ink md:flex"
+            target="__blank"
           >
             <Phone className="size-3.5 text-brass" /> Speak to us
           </a>
